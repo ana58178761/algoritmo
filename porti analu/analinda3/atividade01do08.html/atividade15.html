@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="alunoform">
+
+        <label for="nome"> nome do aluno:</label>
+        <input type="type" id="nome" name="nome"> <br></br>
+
+        <label for="faltas"> faltas do aluno:</label>
+        <input type="type" id="faltas" name="faltas"> <br></br>
+
+        <label for="media"> media do aluno:</label>
+        <input type="type" id="media" name="media"> <br></br>
+
+        <button type="button" onclick=" lerDadosAlunos()">Adicionar Aluno </button>
+
+    </form>
+
+    <div id="listagemAlunos"></div>
+
+    <script src="vetorseparado.js"></script>
+</body>
+
+
+
+<script>
+
+    let alunos = []
+    function lerDadosAlunos() {
+        let nome = prompt("digite o nome do aluno:")
+        let faltas = parseInt(prompt("Digite o numero de faltas do aluno:"))
+        let média = parseFloat(prompt("Digite a média do aluno:"))
+
+        let aluno = {
+            nome: nome,
+            faltas: faltas,
+            média: média
+        }
+        alunos.push(aluno)
+
+        document.getElementById("alunoform").reset()
+        exibirAlunos();
+
+    }
+    function exibirAlunos() {
+        let listagem = document.getElementById('listagemAlunos');
+        listagem.innerHTML = "<h2>Listagem dos alunos:</h2>";
+        for (let aluno of alunos) (
+            listagem.innerHTML += "<p>Nome: $(aluno.nome), faltas: $(aluno.faltas) media: $(aluno.media)"
+        )
+    }
+
+
+    
+
+</script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
